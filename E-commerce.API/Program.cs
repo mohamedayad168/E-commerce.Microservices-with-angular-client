@@ -1,5 +1,6 @@
 using E_commerce.API.Middlewares;
 using E_commerce.Core;
+using E_commerce.Core.Mappers;
 using E_commerce.Infrastructre;
 namespace E_commerce.API
 {
@@ -17,6 +18,7 @@ namespace E_commerce.API
             builder.Services.AddSwaggerGen();
             builder.Services.AddInfrastructure();
             builder.Services.AddCore();
+            builder.Services.AddAutoMapper(typeof(ApplicationUserMappingProfile).Assembly);
             var app = builder.Build();
             app.UseExceptionHandlingMiddleware();
             // Configure the HTTP request pipeline.
